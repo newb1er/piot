@@ -1,3 +1,5 @@
+from typing import Callable, Any
+
 class _StateManager:
     _instance = None
 
@@ -37,7 +39,7 @@ class Pipeline:
     def publish(self, name: str, state) -> None:
         self.manager.set(name, state)
 
-    def subscribe(self, name: str, callback: function) -> None:
+    def subscribe(self, name: str, callback: Callable[[Any], None]) -> None:
         self.manager.subscribe(name, callback)
 
 __all__ = ['Pipeline']
