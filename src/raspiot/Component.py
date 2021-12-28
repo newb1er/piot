@@ -15,6 +15,7 @@ class Component(ABC, Process):
 
 class Generator(Component):
     def __init__(self):
+        super().__init__()
         self.configure()
 
     def run(self):
@@ -26,6 +27,7 @@ class Generator(Component):
 
 class Reactor(Component):
     def __init__(self):
+        super().__init__()
         self.configure()
 
     def run(self):
