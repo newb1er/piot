@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
-from multiprocessing import Process
+from threading import Thread
 
-class Component(ABC, Process):
+class Component(ABC, Thread):
     @abstractmethod
     def configure(self, config):
         return NotImplemented

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
-from multiprocessing import Process
+from threading import Thread
 
-class Worker(ABC, Process):
+class Worker(ABC, Thread):
     @abstractmethod
     def configure(self, config):
         return NotImplemented
