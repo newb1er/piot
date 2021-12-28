@@ -14,7 +14,7 @@ class _StateManager:
 
     def set(self, key, value):
         self.state[key] = value
-        for callback in self.subscriber:
+        for callback in self.subscriber.values():
             callback(value)
 
     def subscribe(self, key, callback):
