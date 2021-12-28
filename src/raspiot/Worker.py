@@ -14,6 +14,7 @@ class Worker(ABC, Process):
         self.work()
 
     def __init__(self, config):
+        super().__init__()
         self.configure(config)
 
     def __del__(self):
